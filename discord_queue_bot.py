@@ -6,7 +6,9 @@ import os
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-client = commands.Bot(command_prefix = '!', status=discord.Status.online, activity=discord.Game('Imong mama'), intents=discord.Intents.all())
+intents = discord.Intents.default()
+intents.message_content = True
+client = commands.Bot(command_prefix='!', status=discord.Status.online, activity=discord.Game('Queue up!'), intents=intents)
 players = {}
 
 @client.event
